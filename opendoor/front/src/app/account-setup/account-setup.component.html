@@ -1,0 +1,4 @@
+<button (click)='user_type="employee"'>Darbuotojas</button>
+<button (click)='user_type="company"'>įmonė</button>
+<app-account-setup-company *ngIf='user_type==="company"'></app-account-setup-company>
+<app-account-setup-employee *ngIf='user_type==="employee"'></app-account-setup-employee>

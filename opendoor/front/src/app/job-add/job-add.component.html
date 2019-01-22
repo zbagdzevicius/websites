@@ -1,0 +1,9 @@
+<p>
+  job-add works!
+</p>
+<div *ngIf="this.loginService.userType=='company'">
+<app-job-add-company></app-job-add-company>
+</div>
+<div *ngIf="this.loginService.userType=='employee'">
+<app-job-add-employee></app-job-add-employee>
+</div>

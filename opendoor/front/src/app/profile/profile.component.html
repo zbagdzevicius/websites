@@ -1,0 +1,10 @@
+<p>
+  profile works!
+</p>
+<div *ngIf="this.loginService.userType=='company'">
+<app-profile-company></app-profile-company>
+</div>
+
+<div *ngIf="this.loginService.userType=='employee'">
+<app-profile-employee></app-profile-employee>
+</div>

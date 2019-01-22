@@ -1,0 +1,18 @@
+<nav>
+  <div *ngIf="this.loginService.userType==='employee' && this.router.url!=='setup'" routerLink="jobSearch">
+    <a >home </a>
+    <a *ngIf="this.router.url!='companySearch'"
+       routerLink="companySearch">companySearch </a>
+    <a *ngIf="this.router.url!='jobSearch'" routerLink="jobSearch">jobSearch </a>
+    <a *ngIf="this.router.url!='addjob'" routerLink="addjob">addjob </a>
+    <a *ngIf="this.router.url!='jobAdverts'" routerLink="jobAdverts">jobAdverts </a>
+  </div>
+
+  <div *ngIf="this.loginService.userType==='company' && this.router.url!=='setup'">
+    <a *ngIf="this.router.url!='employeeSearch'" routerLink="employeeSearch">employeeSearch </a>
+    <a *ngIf="this.router.url!='addjob'" routerLink="addjob">addjob </a>
+  </div>
+
+  <a *ngIf="this.loginService.loggedIn" (click)="logout()" routerLink="login">logout</a>
+  <router-outlet></router-outlet>
+</nav>

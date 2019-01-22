@@ -1,0 +1,21 @@
+<h5>
+  Company setup
+</h5>
+<form name="companySetup" #companySetup="ngForm" (ngSubmit)="OnSubmit(companySetup)">
+  <div>
+    <input type="text" [(ngModel)]="company.firstName" name="firstName" #firstName="ngModel"><label>firstName</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="company.companyName" name="companyName" #companyName="ngModel"><label>companyName</label>
+  </div>
+  <div>
+    <input type="number" [(ngModel)]="company.jobOpenings" name="jobOpenings" #jobOpenings="ngModel"><label>jobOpenings</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="company.lastName" name="lastName" #lastName="ngModel"><label>lastName</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="company.recruiterJobTitle" name="recruiterJobTitle" #recruiterJobTitle="ngModel"><label>recruiterJobTitle</label>
+  </div>
+  <button>submit</button>
+</form>

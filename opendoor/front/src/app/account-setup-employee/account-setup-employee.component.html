@@ -1,0 +1,30 @@
+<h5>
+  Employee setup
+</h5>
+<form name="companySetup" #companySetup="ngForm" (ngSubmit)="OnSubmit(companySetup)">
+  <div>
+    <input type="text" [(ngModel)]="employee.firstName" name="firstName" #firstName="ngModel"><label>firstName</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="employee.lastName" name="lastName" #lastName="ngModel"><label>lastName</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="employee.city" name="city" #city="ngModel"><label>city</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="employee.birth" name="birth" #birth="ngModel"><label>birth</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="employee.description" name="description" #description="ngModel"><label>description</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="employee.keywords" name="keywords" #keywords="ngModel"><label>keywords</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="employee.telephone" name="telephone" #telephone="ngModel"><label>telephone</label>
+  </div>
+  <div>
+    <input type="number" [(ngModel)]="employee.work_experience" name="work_experience" #work_experience="ngModel"><label>work_experience</label>
+  </div>
+  <button>submit</button>
+</form>
