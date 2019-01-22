@@ -1,0 +1,64 @@
+<nav class="navbar has-shadow is-fixed-top is-uppercase">
+  <section class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" *ngIf="route !== 'home'" routerLink="" (click)="isMenuOpened=false; route='home'">Pradžia</a>
+      <div class="navbar-burger" [ngClass]="{'is-active': isMenuOpened}" data-target="myNavBar" (click)="menuOpenClose()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu" id="myNavBar" [ngClass]="{'is-active': isMenuOpened}">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Navigacija
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" *ngIf="route !== 'paslaugos'" routerLink="paslaugos" (click)="isMenuOpened=false; route='paslaugos'">Paslaugos</a>
+            <a class="navbar-item" *ngIf="route !== 'expo'" routerLink="expo" (click)="isMenuOpened=false; route='expo'">Expo</a>
+            <a class="navbar-item" (click)="isContactOpened=true; isMenuOpened=false">Susisiekite</a>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="field is-grouped">
+          <a class="navbar-item" href="https://www.linkedin.com/in/%C5%BEygimantas-bagdzevi%C4%8Dius-137004142/" target="_blank">
+            <figure class="image is-24x24">
+              <img src="assets/icons/linkedin.svg">
+            </figure>
+          </a>
+          <a class="navbar-item" (click)="isContactOpened=true">
+            <figure class="image is-24x24">
+              <img src="assets/icons/email.svg">
+            </figure>
+          </a>
+          <a class="navbar-item" href="https://github.com/zbagdzevicius/" target="_blank">
+            <figure class="image is-24x24">
+              <img src="assets/icons/github.svg">
+            </figure>
+          </a>
+          <a class="navbar-item" href="tel:+37067277255">
+            <figure class="image is-24x24">
+              <img src="assets/icons/telephone.svg">
+            </figure>
+          </a></div>
+      </div>
+    </div>
+  </section>
+</nav>
+
+
+<div class="modal has-text-centered" [ngClass]="{'is-active': isContactOpened}">
+  <div class="modal-background" (click)="isContactOpened=false"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Susisiekite</p>
+      <button class="delete" aria-label="close" (click)="isContactOpened=false"></button>
+    </header>
+    <section class="modal-card-body">
+      <app-contact></app-contact>
+    </section>
+  </div>
+</div>

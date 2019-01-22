@@ -1,0 +1,93 @@
+<section class="modal-card-body">
+  <form *ngIf="!firstName" id="gform" name="contactForm" #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input is-rounded" type="text" [(ngModel)]="message.firstName" name="firstName" #firstName="ngModel" placeholder="Vardas"
+              [ngClass]="firstName.valid ? 'is-success' : 'is-danger'" required>
+            <span class="icon is-left">
+              <img class="image is-16x16" src="assets/icons/user1.svg">
+            </span>
+            <span class="icon is-right">
+              <ng-container *ngIf="firstName.invalid; then isInvalid; else isValid"></ng-container>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input is-rounded" type="text" [(ngModel)]="message.lastName" name="lastName" #lastName="ngModel" placeholder="Pavardė" [ngClass]="lastName.valid ? 'is-success' : 'is-danger'" required>
+            <span class="icon is-left">
+              <img class="image is-16x16" src="assets/icons/user1.svg">
+            </span>
+            <span class="icon is-right">
+              <ng-container *ngIf="lastName.invalid; then isInvalid; else isValid"></ng-container>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input is-rounded" type="email" [(ngModel)]="message.email" name="email" #email="ngModel" placeholder="Elektroninis paštas"
+              [ngClass]="email.valid ? 'is-success' : 'is-danger'" required email>
+            <span class="icon is-left">
+              <img class="image is-16x16" src="assets/icons/email.svg">
+            </span>
+            <span class="icon is-right">
+              <ng-container *ngIf="email.invalid; then isInvalid; else isValid"></ng-container>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input is-rounded" type="tel" [(ngModel)]="message.telephone" name="telephone" #telephone="ngModel" placeholder="Telefono numeris">
+            <span class="icon is-left">
+              <img class="image is-16x16" src="assets/icons/telephone.svg">
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input is-rounded" type="text" [(ngModel)]="message.subject" name="subject" #subject="ngModel" placeholder="Tema"
+            [ngClass]="subject.valid ? 'is-success' : 'is-danger'" required minlength="5">
+          <span class="icon is-left">
+            <img class="image is-16x16" src="assets/icons/message.svg">
+          </span>
+          <span class="icon is-right">
+            <ng-container *ngIf="subject.invalid; then isInvalid; else isValid"></ng-container>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <textarea class="textarea" type="text" [(ngModel)]="message.message" name="message" #message="ngModel" placeholder="Žinutė"
+          [ngClass]="message.valid ? 'is-success' : 'is-danger'" required minlength="15"></textarea>
+      </div>
+    </div>
+    <button class="button is-rounded" [disabled]="contactForm.form.invalid" type=submit>Siųsti</button>
+  </form>
+  <div class="card" *ngIf="firstName">
+    <header class="card-header">
+      <p class="card-header-title is-centered">
+        {{firstName}}, ačiū už žinutę
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        Greitu metu su jumis susisieksiu !<br>Gražios dienos
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #isInvalid>
+  <img class="image is-16x16" src="assets/icons/invalid.svg">
+</ng-template>
+<ng-template #isValid>
+  <img class="image is-16x16" src="assets/icons/valid.svg">
+</ng-template>
