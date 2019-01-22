@@ -1,0 +1,95 @@
+<nav class="navbar section has-shadow" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <div class="navbar-item">
+      <img src="assets/images/logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="141">
+    </div>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <div class="field has-addons">
+          <div class="buttons has-addons">
+            <p class="control">
+              <a class="button is-rounded nav-item-nonselected">
+                <span>DASHBOARD</span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button nav-item-selected is-selected">
+                <span>CONTACTS</span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-rounded nav-item-nonselected">
+                <span>NOTIFICATIONS</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="control has-icons-right">
+          <input class="input is-rounded" type="text" placeholder="Search">
+          <span class="icon is-small is-right search-box-icon-background search">
+            <fa-icon [icon]="icons.search"></fa-icon>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="dropdown is-right" [ngClass]="{'is-active': activeDropdown}">
+        <div class="dropdown-trigger" (click)="activeDropdown = !activeDropdown">
+          <button class="button nav-item-nonselected" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span class="icon">
+              <fa-icon [icon]="icons.user"></fa-icon>
+            </span>
+            <span>Jorah Mormont</span>
+            <span class="icon is-small is-right">
+              <fa-icon [icon]="icons.down"></fa-icon>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              <span class="icon">
+                <fa-icon [icon]="icons.users"></fa-icon>
+              </span>
+              <span>Groups</span>
+            </a>
+            <hr class="dropdown-divider is-marginless">
+            <a class="dropdown-item">
+              <span class="icon">
+                <fa-icon [icon]="icons.comments"></fa-icon>
+              </span>
+              <span>Frequently contacted</span>
+            </a>
+            <hr class="dropdown-divider is-marginless">
+            <a href="#" class="dropdown-item">
+              <span class="icon">
+                <fa-icon [icon]="icons.wrench"></fa-icon>
+              </span>
+              <span>Preferences</span>
+            </a>
+            <hr class="dropdown-divider is-marginless">
+            <a href="#" class="dropdown-item">
+              <span class="icon">
+                <fa-icon [icon]="icons.power"></fa-icon>
+              </span>
+              <span>Log out</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>

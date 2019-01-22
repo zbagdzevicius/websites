@@ -1,0 +1,152 @@
+<nav class="level top-bar section is-marginless">
+  <div class="level-left">
+    <span class="level-item">
+      <input class="input is-rounded" type="text" placeholder="Name" #name>
+    </span>
+
+    <span class="level-item">
+      <div class="control">
+        <div class="select is-rounded">
+          <select #city>
+            <option disabled>City</option>
+            <option>Any City</option>
+            <option *ngFor="let city of cities">{{city}}</option>
+          </select>
+        </div>
+      </div>
+    </span>
+
+    <span class="level-item">
+      <label class="checkbox">
+        <input type="checkbox" (change)="changeIsActiveFilter($event)">
+        <span class="is-white">Show Active</span>
+      </label>
+    </span>
+
+    <span class="level-item">
+      <button class="button is-rounded filter-button" (click)="filterContacts(name.value, city.value)">FILTER</button>
+    </span>
+  </div>
+  <div class="level-right">
+    <span class="level-item is-marginless">
+      <button class="button add-new-contact is-rounded" (click)="addNewContact()">
+        <span class="icon is-large">
+          <fa-icon class="fas fa-2x" [icon]="icons.plus"></fa-icon>
+        </span>
+        <span>ADD NEW CONTACT</span>
+      </button>
+    </span>
+  </div>
+</nav>
+
+<div class="columns section">
+  <div class="column is-one-fifth is-centered">
+    <div class="card has-equal-height">
+      <div class="is-current-contact">
+        <figure class="image">
+          <img class='is-rounded' src="assets/images/userpic.jpg">
+        </figure>
+        <table *ngIf="selectedContact" class="is-fullwidth current-contact-table">
+          <thead>
+            <tr>
+              <th><span>Name:</span></th>
+              <td><span>{{selectedContact.name}}</span></td>
+            </tr>
+            <tr>
+              <th><span>Surname:</span></th>
+              <td><span>{{selectedContact.surname}}</span></td>
+            </tr>
+            <tr>
+              <th><span>City:</span></th>
+              <td><span>{{selectedContact.city}}</span></td>
+            </tr>
+            <tr>
+              <th><span>Email:</span></th>
+              <td><a class="is-email" href="mailto:{{selectedContact.email}}"><u>{{selectedContact.email}}</u></a></td>
+            </tr>
+            <tr>
+              <th><span>Phone:</span></th>
+              <td><span>{{selectedContact.phone}}</span></td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card has-equal-height">
+      <table class="table is-hoverable">
+        <thead>
+          <tr>
+            <th class="has-text-centered table-column-1" (click)="changeContactsOrdering()">
+              <nav class="level is-mobile">
+                <span class="level-item">
+                  <span>Name</span>
+                </span>
+                <div class="level-right">
+                  <span class="level-item">
+                    <span class="icon-small">
+                      <fa-icon [icon]="icons.arrowDown"></fa-icon>
+                    </span>
+                  </span>
+                </div>
+              </nav>
+            </th>
+            <th class="table-column-2">
+              <span>Surname</span></th>
+            <th class="table-column-3">
+              <span>City</span>
+            </th>
+            <th class="table-column-4">
+              <span>Email</span>
+            </th>
+            <th class="has-text-right table-column-5">
+              <span>Phone</span>
+            </th>
+            <th class="table-column-6"></th>
+          </tr>
+        </thead>
+        <tbody class="normal-font-weight">
+          <tr *ngFor="let contact of contacts | filterBy:filterArgs" (click)="showContact(contact)" [ngClass]="{'selected-row' : contact.id===selectedRow}">
+            <th>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <span class="level-item">
+                    <span class="icon-small">
+                      <fa-icon *ngIf="!contact.active" [icon]="icons.eyeSlash"></fa-icon>
+                      <fa-icon *ngIf="contact.active" [icon]="icons.eye"></fa-icon>
+                    </span>
+                  </span>
+                  <span>
+                    {{contact.name}}
+                  </span>
+                </div>
+              </nav>
+            </th>
+
+            <th>{{contact.surname}}</th>
+            <th>{{contact.city}}</th>
+            <th>{{contact.email}}</th>
+            <th class="has-text-right">{{contact.phone}}</th>
+            <th>
+              <nav class="level is-mobile">
+                <span class="level-item">
+                  <span class="icon">
+                    <fa-icon [icon]="icons.pen"></fa-icon>
+                  </span>
+                </span>
+                <span class="level-item">
+                  <span class="icon">
+                    <fa-icon [icon]="icons.trash"></fa-icon>
+                  </span>
+                </span>
+              </nav>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

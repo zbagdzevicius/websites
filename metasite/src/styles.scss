@@ -1,0 +1,212 @@
+$body-family: Open Sans;
+$body-size: 14px;
+$divider-thickness : 1px;
+$navbar-item-img-max-height: 25rem;
+$navbar-height: 2rem;
+$navbar-padding-vertical: 2rem;
+$size-normal: 0.9rem;
+$button-padding-horizontal: 2em;
+$dropdown-content-offset: 15px;
+$radius: 8px;
+$navbar-background-color: #1B3C43;
+$dropdown-content-background-color: #0CA1BD;
+$dropdown-item-hover-background-color: #1B3C43;
+$table-head-cell-color: white;
+$button-color: #0CA1BD;
+$input-shadow: 0 0 0 2px black, 0 0 0 4px rgba(white, 0.1);
+$navbar-box-shadow-size: 0 0 2px 2px;
+$navbar-box-shadow-color: rgba(black, 0.3);
+.top-bar{
+    background: linear-gradient(to right, rgb(26, 94, 95) 0%, rgb(22, 67, 90) 100%);
+}
+.has-equal-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+body{background: linear-gradient(144deg, rgb(33, 126, 123) 0%, rgb(28, 70, 110) 100%);}
+.table-column-1{background-color: #0086A5;
+    border-top-left-radius: $radius !important;}
+.table-column-2{background-color: #0390AE;}
+.table-column-3{background-color: #0799B8;}
+.table-column-4{background-color: #0DADCA;}
+.table-column-5{background-color: #11B6D4;}
+.table-column-6{background-color: #14C0DD;
+    border-top-right-radius : $radius !important;}
+.footer-colum-1{background: linear-gradient(to right, rgb(26, 94, 95) 0%, rgb(22, 67, 90) 100%);}
+.footer-colum-2{background-color: #122845}
+.footer-colum-3{background: rgb(23, 49, 86);}
+.nav-item-nonselected {
+    background-color: $button-color !important;
+    border: 0 !important;
+    color: white !important;
+}
+.nav-item-selected {
+    background-color: #198593 !important;
+    border: 1px solid $button-color !important;
+    color: white !important;
+    box-shadow: inset 0 0 1px black !important;
+}
+.main-footer, a:not(.is-email), .is-white{
+    color:white !important;
+    font-size: 0.9rem;
+}
+.card-is-rounded{
+    border-radius: 10px 10px 10px 10px;
+}
+.is-divider{margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    border-top-color: rgba(white, 0.1) !important};
+.is-current-contact{
+    width: 90% !important;
+    margin: 5%;
+    display:block;
+}
+.search{
+    background: lightgrey;
+    border-radius:  0 25px 25px 0;
+    height: 2em !important;
+}
+.search fa-icon{
+    color: black;
+}
+input::placeholder {color: black !important;};
+.section{
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+}
+.footer-colum-1 .section{
+    padding-top: 5.25px !important;
+}
+.footer-colum-2 .section{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 5.25px !important;
+    padding-bottom: 5.25px !important;
+}
+.footer-colum-3 .section{
+    padding-left: 5.25px !important;
+    padding-top: 5.25px !important;
+    padding-bottom: 5.25px !important;
+}
+.button {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+ul, .button, u:not(.is-base-size), input, .copyright, .is-underlined, .current-contact-table, .dropdown-item {
+    font-size: 0.8rem !important;
+}
+* {
+    font-weight: 400 !important; 
+}
+.is-paddingless{
+    margin-top: 15px !important;
+}
+.current-contact-table{
+    width: 100% !important;
+}
+.current-contact-table th {
+    text-align: right !important;
+    padding-right: 5px !important;
+}
+.navbar-end{
+    position: fixed !important;
+    right: 0 !important;
+    padding-right: 30px !important;
+    top: 0 !important;
+    font-size: 0.5rem !important;
+}
+.navbar-end button{
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+.dropdown-content{
+    padding: 0 !important;
+}
+.dropdown-divider{
+    box-shadow: 0.1px 0.1px 0.1px 0.1px black;
+    height: 0 !important;
+}
+.dropdown-item{
+    padding: 5px !important;
+}
+.add-new-contact{
+    color:white !important;
+    background-color: #217F7A !important;
+    border: 0 !important;
+    box-shadow : 0px 0px 2px 1px rgba(black, 0.9);
+    padding-left: 12px !important;
+}
+.add-new-contact span:not(.icon){
+    padding-left: 8px !important;
+}
+.add-new-contact .icon{
+    background-color:white !important;
+    border-radius: 50px !important;
+    color: #1A6662 !important;
+}
+.filter-button{
+    background: transparent !important;
+    color: white !important;
+    border: 1.5px solid rgba(white, 0.3) !important;
+}
+.filter-button:hover{
+    color: white !important;
+    background-color: #217F7A !important;
+}
+.filter-button:focus {
+    display:none !important;
+}
+img.is-rounded{
+    border: 4px solid lightgrey !important;
+}
+.is-current-contact td span, .is-email {
+    font-weight: 600 !important;
+}
+.is-current-contact th span {
+    color: #848484 !important;
+}
+.is-current-contact tr {
+    line-height: 20px !important;
+}
+.is-current-contact {
+    margin-top: 20px !important;
+}
+.card, table{
+    border-radius: $radius !important;
+}
+.selected-row .icon{
+    background: $button-color;
+    color: white;
+    border-radius: $radius;
+    font-size: 11px !important;
+}
+.icon-small{
+    font-size: 11px !important;
+}
+.selected-row{
+    background: #E6F6F9;
+}
+.select{
+    box-shadow: 0 0 0 2px black, 0 0 0 4px rgba(white, 0.1) !important;
+    border-radius: 50px !important;
+}
+.checkbox input{
+    box-shadow: inset 0 0 0 2px black, inset 0 0 0 4px rgba(white, 0.1) !important;
+    border-radius: 50px !important;
+    margin: 5px !important;
+}
+.table.is-hoverable thead{
+    line-height: 30px !important;
+}
+.card{
+    box-shadow: 0 0 0 1px rgba(black, 0.1) !important;
+}
+.is-email u{font-weight: bold !important;
+color: $button-color !important;}
+@import "node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-divider/dist/css/bulma-divider.sass";
