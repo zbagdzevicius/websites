@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="content has-text-centered">
+    <nav class="columns is-multiline is-mobile">
+      <div class="column is-half-mobile is-one-third-tablet is-2-desktop" *ngFor="let category of categories">
+        <a class="has-text-centered is-capitalized link" (click)="goToCategory(category['slug'])">{{category['name']}}</a>
+      </div>
+    </nav>
+    <div class="is-divider"></div>
+    <a href="https://armadillo.lt" target="_blank">
+      By Armadillo.lt
+    </a>
+    <p>
+      <span class="icon is-large">
+        <a href="https://facebook.com/armadillo.lt/" data-social-network="Facebook" target="_blank">
+          <i class="fab fa-3x fa-facebook-square"></i>
+        </a>
+      </span>
+      <span class="icon is-large">
+        <a href="https://instagram.com/armadillo.lt" data-social-network="Instagram" target="_blank">
+          <i class="fab fa-3x fa-instagram"></i>
+        </a>
+      </span>
+      <span class="icon is-large">
+        <a href="mailto:Info@armadillo.lt">
+          <i class="fas fa-3x fa-envelope-square"></i>
+        </a>
+      </span>
+    </p>
+    <nav>
+      <share-buttons [theme]="'modern-light'" [show]="0"></share-buttons>
+    </nav>
+  </div>
+</footer>

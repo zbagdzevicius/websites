@@ -1,0 +1,12 @@
+<div *ngIf="newPosts">
+  <div class="is-divider" data-content="LATEST NEWS"></div>
+  <div *ngFor="let post of newPosts" (click)="goToPagePost(post.slug)">
+      <a class="box has-ribbon">
+        <article>
+            <div class="ribbon is-small">{{post.date}}</div>
+            <h1 class="title" [innerHTML]="post.title.rendered"></h1>
+        </article>
+      </a>
+      <div class="is-divider"></div>
+  </div>
+</div>

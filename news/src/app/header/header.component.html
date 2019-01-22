@@ -1,0 +1,50 @@
+<nav class="navbar has-shadow is-spaced is-fixed-top is-uppercase ">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" (click)="goToHomepage()">
+        HOME
+      </a>
+      <div class="navbar-burger" [ngClass]="{'is-active': isMenuOpened}" data-target="myNavBar" (click)="menuOpenClose()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu" id="myNavBar" [ngClass]="{'is-active': isMenuOpened}">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Categories
+          </a>
+          <div class="navbar-dropdown">
+            <div *ngFor="let category of categories" (click)="goToCategory(category['slug'])">
+              <a class="navbar-item" *ngIf="category != currentCategory">{{category['name']}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <span class="icon is-medium">
+              <a href="https://facebook.com/armadillo.lt/" data-social-network="Facebook" target="_blank">
+                <i class="fab fa-lg fa-facebook-square"></i>
+              </a>
+            </span>
+            <span class="icon is-medium">
+              <a href="https://instagram.com/armadillo.lt" data-social-network="Instagram" target="_blank">
+                <i class="fab fa-lg fa-instagram"></i>
+              </a>
+            </span>
+            <span class="icon is-medium">
+              <a href="mailto:Info@armadillo.lt">
+                <i class="fas fa-lg fa-envelope-square"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

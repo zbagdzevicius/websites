@@ -1,0 +1,38 @@
+<div class="is-divider"></div>
+<div class="content" *ngIf="currentCategory">
+    <h1 class="title is-capitalized">
+      {{currentCategory}}
+    </h1>
+</div>
+
+<article class="card box has-ribbon-left" routerLink="/{{post.slug}}" *ngFor="let post of posts">
+  <div class="ribbon is-small">{{post.date}}</div>
+  <div class="columns is-mobile is-centered is-marginless">
+    <div class="column is-narrow is-paddingless">
+      <img class="image" src="{{post.picture}}">
+    </div>
+    <div class="column">
+      <h1 class="title" [innerHTML]="post.title.rendered"></h1>
+      <span class="is-hidden-mobile is-paddingless" [innerHTML]="post.excerpt.rendered"></span>
+    </div>
+  </div>
+  <div class="content is-hidden-desktop is-hidden-tablet">
+    <div [innerHTML]="post.excerpt.rendered"></div>
+  </div>
+</article>
+
+
+<nav *ngIf="numberOfPages" class="navbar pagination is-small is-centered is-primary" role="navigation" aria-label="pagination">
+  <div class="container">
+    <ul class="pagination-list">
+      <button class="pagination-previous" [disabled]="currentPage===1" (click)="loadPagePosts(currentPage - 1)">< </button>
+          <span *ngFor="let pageNumber of numberOfPages">
+            <li>
+              <button [disabled]="pageNumber==currentPage" [ngClass]="{'is-current': pageNumber==currentPage}" class="
+                pagination-link is-current" (click)="loadPagePosts(pageNumber)">{{pageNumber}}</button>
+            </li>
+          </span>
+          <button class="pagination-next" [disabled]="currentPage===totalPages" (click)="loadPagePosts(currentPage + 1)">></button>
+    </ul>
+  </div>
+</nav>

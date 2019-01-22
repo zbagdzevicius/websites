@@ -1,0 +1,96 @@
+@charset "utf-8";
+@import '../node_modules/@ibm/plex/css/ibm-plex.min.css';
+// fonts families
+$family-sans-serif: 'IBM Plex Sans Condensed';
+$family-serif: 'IBM Plex Serif', 'Georgia';
+.title, .is-divider{font-family:$family-serif;}
+
+// font sizes and weights
+$title-size: 23px;
+$body-size: 19px;
+$divider-font-size: 1rem;
+$title-weight: 500;
+$title-line-height: 1.15;
+.navbar-item{font-size:16px;}
+
+// colors
+$color-impact: #A5B1FF;
+$color-dark: #6B596B;
+$color-light: #FFFBFA;
+$color-grey: #F7F9FF;
+$color-soft: #FFF7FB;
+
+// $light: $color-soft; //color for navbar
+
+
+$link: $color-dark;
+$button-background-color: $color-dark;
+$button-color: $color-soft;
+$button-hover-color: $color-light;
+$button-hover-border-color: $color-impact;
+
+$primary: transparent; // color for social icons navbar
+$navbar-background-color: $color-grey;
+$navbar-item-color: $color-dark;
+$navbar-dropdown-background-color: $color-light;
+$navbar-item-hover-background-color: $color-grey;
+$navbar-item-active-background-color: $color-impact;
+
+$footer-background-color: $color-grey;
+
+$ribbon-background-color: $color-impact;
+$ribbon-color: $color-soft;
+
+$message-header-background-color: $color-soft;
+$message-body-border-color: $color-dark;
+
+
+// $ribbon-color: $white;
+// $background: $color-soft;
+// 
+
+
+
+
+// $body-background-color:  $danger;
+// 
+
+
+// $navbar-burger-color: $dark;
+
+// $navbar-background-color: transparent;
+
+// paddings
+$section-padding: 0.5rem 0.25rem;
+$navbar-padding-vertical: 0.15rem;
+$message-header-padding: 1em 0.5em;
+$message-body-padding: 0.2em 0.3em;
+$box-padding :1.3em 0.2rem 1.3em 0.2rem;
+.sb-button.sb-modern-light{margin: 1px;} //social icons
+
+
+
+// radius
+$radius: 0;
+$box-radius: $radius;
+$navbar-dropdown-radius: $radius;
+
+// widths
+$message-header-body-border-width: .1rem;
+$ribbon-border : none;
+$navbar-box-shadow-size: 0 2px;
+$navbar-height: 2.8rem;
+nav.socialnavbar{min-height: 10px; height: 29px}
+
+// etc
+$navbar-fixed-z: 999999999;
+$card-shadow: 0;
+
+
+
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-divider/dist/css/bulma-divider.sass";
+@import "../node_modules/bulma-pageloader/dist/css/bulma-pageloader.sass";
+@import "../node_modules/bulma-ribbon/dist/css/bulma-ribbon.sass";
+@import '~@ngx-share/button/styles/share-buttons';
+@import '~@ngx-share/button/styles/themes/modern/modern-light-theme.scss';

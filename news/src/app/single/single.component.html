@@ -1,0 +1,17 @@
+<article class="media has-ribbon-left" *ngIf="post">
+  <div class="ribbon">{{post.date}}</div>
+  <div class="media-content box">
+      <p class="image">
+        <img class="image" *ngIf="post.picture" src="{{post.picture}}">
+      </p>
+    <h1 class="title" [innerHTML]="post.title.rendered"></h1>
+    <div class="content" [innerHTML]="post.content.rendered"></div>
+    <button class="level-item button" (click)="backToPreviousPage()">back</button>
+    <nav class="navbar is-fixed-bottom is-primary socialnavbar">
+      <div class="container has-text-centered">
+      <share-buttons [theme]="'modern-light'" [include]="['facebook','linkedin','twitter','pinterest','messenger','google']"
+        [size]="-4"></share-buttons></div>
+    </nav>
+  </div>
+</article>
+<fb-comments data-width="100%"></fb-comments>

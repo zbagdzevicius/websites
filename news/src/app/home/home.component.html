@@ -1,0 +1,28 @@
+<div *ngIf="categoryPosts">
+  <div *ngFor="let category of categories">
+    <div class="is-divider"></div>
+    <div class="content">
+      <a routerLink="/{{category.split(' ').join('-')}}/1">
+        <h1 class="title is-capitalized">
+          {{category}}
+        </h1>
+      </a>
+    </div>
+
+    <article class="card box has-ribbon-left" routerLink="/{{post.slug}}" *ngFor="let post of categoryPosts[category]">
+      <div class="ribbon is-small">{{post.date}}</div>
+      <div class="columns is-mobile is-centered is-marginless">
+        <div class="column is-narrow is-paddingless">
+          <img class="image" src="{{post.picture}}">
+        </div>
+        <div class="column">
+          <h1 class="title" [innerHTML]="post.title.rendered"></h1>
+          <span class="is-hidden-mobile is-paddingless" [innerHTML]="post.excerpt.rendered"></span>
+        </div>
+      </div>
+      <div class="content is-hidden-desktop is-hidden-tablet">
+        <div [innerHTML]="post.excerpt.rendered"></div>
+      </div>
+    </article>
+  </div>
+</div>
