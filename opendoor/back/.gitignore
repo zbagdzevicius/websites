@@ -1,6 +1,0 @@
-x
-__pycache__
-*.pyc
-back/dev_settings.py
-back/htmlcov
-back/.coverage
