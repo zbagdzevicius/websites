@@ -46,7 +46,7 @@
     "cors": "~2.8.4",
     "jw-angular-pagination": "^1.0.5",
     "ngx-facebook": "^2.4.0",
-    "npm": "^6.3.0",
+    "npm": "^6.14.6",
     "roboto-fontface": "^0.10.0",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.2",
