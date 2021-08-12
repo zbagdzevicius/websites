@@ -31,7 +31,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@ibm/plex": "^1.1.4",
-    "@ng-toolkit/universal": "^1.1.41-beta.110",
+    "@ng-toolkit/universal": "^7.1.2",
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "@ngx-share/button": "^6.0.1",
