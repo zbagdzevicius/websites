@@ -1,0 +1,28 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - npm > npm-profile > make-fetch-happen > https-proxy-agent:
+        patched: '2023-07-12T15:48:40.370Z'
+        id: SNYK-JS-HTTPSPROXYAGENT-469131
+        path: npm > npm-profile > make-fetch-happen > https-proxy-agent
+    - npm > pacote > make-fetch-happen > https-proxy-agent:
+        patched: '2023-07-12T15:48:40.370Z'
+        id: SNYK-JS-HTTPSPROXYAGENT-469131
+        path: npm > pacote > make-fetch-happen > https-proxy-agent
+    - npm > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2023-07-12T15:48:40.370Z'
+        id: SNYK-JS-HTTPSPROXYAGENT-469131
+        path: npm > npm-registry-fetch > make-fetch-happen > https-proxy-agent
+    - npm > libcipm > pacote > make-fetch-happen > https-proxy-agent:
+        patched: '2023-07-12T15:48:40.370Z'
+        id: SNYK-JS-HTTPSPROXYAGENT-469131
+        path: npm > libcipm > pacote > make-fetch-happen > https-proxy-agent
+    - npm > libnpmhook > npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2023-07-12T15:48:40.370Z'
+        id: SNYK-JS-HTTPSPROXYAGENT-469131
+        path: >-
+          npm > libnpmhook > npm-registry-fetch > make-fetch-happen >
+          https-proxy-agent
